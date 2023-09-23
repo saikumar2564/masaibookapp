@@ -2,11 +2,13 @@ const express=require("express")
 const bodyParser = require('body-parser');
 const bookRoutes = require('./routes/bookroutes');
 const { connection } = require("./config/mongoDB");
-const app = express();
 const cors = require('cors')
 
-app.use(bodyParser.json());
+
+const app = express();
 app.use(cors());
+app.use(bodyParser.json());
+
 
 app.get("/", (req,res) => {
 
