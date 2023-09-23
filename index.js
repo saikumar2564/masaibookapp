@@ -3,7 +3,10 @@ const bodyParser = require('body-parser');
 const bookRoutes = require('./routes/bookroutes');
 const { connection } = require("./config/mongoDB");
 const app = express();
+const cors = require('cors')
+
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/", (req,res) => {
 
